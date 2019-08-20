@@ -90,8 +90,8 @@ public class ApproximatesHoleFilling {
 	 */
 	private void fill(Picture fill_image, int r, int c) {
 		HashSet<Pixel> connect=new HashSet<>();
-		strategy.getNeighbor(r, c, connect);
 		Pixel p=new Pixel(r, c);
+		strategy.getNeighbor(p, connect);
 		double sum_m=0;
 		double sum_n=0;
 		double weight=0;

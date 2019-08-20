@@ -18,13 +18,13 @@ public class EightConnectivity implements ConnectivityStrategy {
 	
 	@Override
 	
-	public void addToBoundary(int r, int c, HashSet<Pixel> boundary) {
+	public void addToBoundary(Pixel pixel, HashSet<Pixel> boundary) {
 
 		for (int i : Arrays.asList(-1, 0, 1)) {
 			for (int j : Arrays.asList(-1, 0, 1)) {
 				if (i == 0 && j == 0) continue;
-				Pixel p=new Pixel(r+i,c+j);
-				if(mask[r+i][c+j]!=-1 && !boundary.contains(p) ) {
+				Pixel p=new Pixel(pixel.getRow()+i,pixel.getCol()+j);
+				if(mask[pixel.getRow()+i][pixel.getCol()+j]!=-1 && !boundary.contains(p) ) {
 					boundary.add(p);
 				}
 			}

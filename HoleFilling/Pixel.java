@@ -1,5 +1,6 @@
 package HoleFilling;
 
+
 public class Pixel {
 
 	private int row;
@@ -23,6 +24,25 @@ public class Pixel {
 	public int getCol() {
 		return col;
 	}
+	
+	@Override
+    public boolean equals(Object o) {
+
+        if (o == this) return true;
+        if (!(o instanceof Pixel)) {
+            return false;
+        }
+
+        Pixel pixel = (Pixel) o;
+
+        return pixel.row==this.row && pixel.col==this.col;
+    }
+
+    @Override
+    public int hashCode() {
+    	String str=this.row+","+this.col;
+        return str.hashCode(); //65536*this.row + this.col;
+    }
 
 	
 

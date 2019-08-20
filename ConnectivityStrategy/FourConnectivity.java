@@ -15,7 +15,9 @@ public class FourConnectivity implements ConnectivityStrategy {
 	}
 
 	@Override
-	public void addToBoundary(int r, int c, HashSet<Pixel> boundary) {
+	public void addToBoundary(Pixel p, HashSet<Pixel> boundary) {
+		int r=p.getRow();
+		int c=p.getCol();
 
 
 		if(mask[r+1][c]!=-1) {

@@ -23,8 +23,9 @@ public class Context {
 		for (int i = 0; i < mask.length; i++) {
 			for (int j = 0; j < mask[0].length; j++) {
 				if(mask[i][j]==-1) {
-					hole.add(new Pixel(i,j));
-					strategy.addToBoundary(i,j,boundary);
+					Pixel p=new Pixel(i,j);
+					hole.add(p);
+					strategy.addToBoundary(p,boundary);
 				}
 			}
 		}
@@ -36,8 +37,8 @@ public class Context {
 		return this.hole;
 	}
 	
-	public void getNeighbor(int i,int j,HashSet<Pixel> b){
-		strategy.addToBoundary(i,j,b);
+	public void getNeighbor(Pixel p,HashSet<Pixel> b){
+		strategy.addToBoundary(p,b);
 	}
 
 
